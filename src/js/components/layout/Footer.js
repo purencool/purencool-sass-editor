@@ -9,7 +9,7 @@ export default class Footer extends React.Component {
   render() {
     return (
       <footer>
-        <div class="row">
+        <div>
           <div class="col-lg-12">
             <p>Copyright &copy; Purencool</p>
           </div>
