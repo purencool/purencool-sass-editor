@@ -1,0 +1,28 @@
+
+
+
+body{
+    background-color: var(--bg-color-1);
+}
+
+
+h1 {
+    font-size: var(--font-h1);
+}
+
+h2 {
+    font-size: var(--font-h2);
+}
+
+h3 {
+    font-size: var(--font-h3);
+}
+
+
+
+aside {
+    background: var(--bg-color-4);
+}
+
+@media only screen and (min-width: 500px) {
+}

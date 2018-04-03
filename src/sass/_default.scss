@@ -14,12 +14,13 @@ $breakpoints: (
         "desktop-wide": 1439px
 );
 
-$baseColor: #585858;
-$baseMenuColor: #333333;
-$baseDropDownMenuBackgroundColor:rgba(34,34,34,.97);
-$baseDropDownMenuColor:#cacaca;
-$baseBorderColor: #f0f0f0;
-$baseBackgroundColor: white;
-$baseFontType:'Open Sans', sans-serif;
-$firstFontType: 'Merriweather', serif;
-$secondFontType: 'Merriweather', serif;
+
+:root {
+        --bg-color-1: #162129;
+        --bg-color-2: #FFC300;
+        --bg-color-3: #FF5733;
+        --bg-color-4: #C70039;
+        --font-h1: 2.5em;
+        --font-h2: 1.1em;
+        --font-h3: .9em;
+    }

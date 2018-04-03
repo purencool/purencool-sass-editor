@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Router, Route, IndexRoute, hashHistory } from "react-router";
 
-import Layout from "./pages/Layout";
+import Layout from "./layouts/Layout";
 import Ide from "./pages/Ide";
 import Articles from "./pages/Articles";
 import Video from "./pages/Video";

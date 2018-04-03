@@ -1,7 +1,8 @@
-@import "_default_variables";
+@import "_default";
 @import "_global_mixins";
-@import "_html";
-@import "_header";
-@import "_menus";
-@import "_content";
-@import "_footer";
+@import "_root_elements";
+@import "./layouts/_layout";
+@import "./components/_html";
+@import "./components/_header";
+@import "./components/_menus";
+@import "./components/_footer";
