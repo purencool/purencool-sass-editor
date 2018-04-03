@@ -1,0 +1,14 @@
+{
+    "name": "purencool/editor",
+    "description": "Adding editor",
+    "license": "GPLV3",
+    "authors": [
+        {
+            "name": "purencool",
+            "email": "purencool@gmail.com"
+        }
+    ],
+    "require": {
+        "leafo/scssphp": "0.7.5"
+   }
+}

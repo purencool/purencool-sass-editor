@@ -1,0 +1,9 @@
+/vendor/
+/node_modules
+/data
+/package.json
+/composer-setup.php
+/npm-debug.log
+/.composer.phar
+/.sass
+.sass-cache
