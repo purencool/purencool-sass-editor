@@ -1,4 +1,7 @@
 <?php
+namespace Purencool\Backend\Controllers;
+
+
 /**
  * Undocumented class
  */

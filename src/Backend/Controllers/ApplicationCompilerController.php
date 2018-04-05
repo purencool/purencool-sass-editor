@@ -1,8 +1,12 @@
 <?php
+
+namespace Purencool\Backend\Controllers;
 /**
  * App sass compiler
  */
 include_once  "../../vendor/leafo/scssphp/scss.inc.php";
+
+
 
 use Leafo\ScssPhp\Compiler;
 
