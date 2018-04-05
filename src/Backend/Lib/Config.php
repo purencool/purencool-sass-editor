@@ -3,7 +3,7 @@
  *  @author purencool <purencool@gmail.com>
  *  @copyright GPLV3
  */
-namespace Purencool\Backend\Lib;
+namespace purencool_editor\Backend\Lib;
 
 /**
  * Creates the default configuration that is controlled by
@@ -26,21 +26,37 @@ class Config
      *
      * @var string
      */
-    private $sass = '../sass';
+    private $sassDirectory = '../sass';
 
     /**
      * Default css directory
      *
      * @var string
      */
-    private $css = '../css';
+    private $cssDirectory = '../css';
 
     /**
      * Default image directory
      *
      * @var string
      */
-    private $images = '../images';
+    private $imagesDirectory = '../images';
+
+
+    /**
+     * Default sass files
+     *
+     * @var string
+     */
+    private $defaultSassFile = 'styles.scss';
+
+
+    /**
+     * Default css file
+     *
+     * @var string
+     */
+    private $defaultCssFile = 'styles.css';
 
 
     /**
@@ -55,7 +71,7 @@ class Config
      * @param string $directory
      * @return void
      */
-    public function setDirectory($directory)
+    public function set($directory)
     {
         $this->directory = $directory;
     }
@@ -64,51 +80,88 @@ class Config
     /**
      * @return void
      */
-    public function getSass()
+    public function getSassDirectory()
     {
-        return $this->sass;
+        return $this->sassDirectory;
     }
 
     /**
-     * @param string $sass
+     * @param string $sassDirectory
      * @return void
      */
-    public function setSass($sass)
+    public function setSassDirectory($sassDirectory)
     {
-        $this->sass = $sass;
-    }
-
-    /**
-     * @return void
-     */
-    public function getCss()
-    {
-        return $this->css;
-    }
-
-    /**
-     * @param string $css
-     * @return void
-     */
-    public function setCss($css)
-    {
-        $this->css = $css;
+        $this->sass = $sassDirectory;
     }
 
     /**
      * @return void
      */
-    public function getImages()
+    public function getCssDirectory()
     {
-        return $this->images;
+        return $this->cssDirectory;
     }
 
     /**
-     * @param string $images
+     * @param string $cssDirectory
      * @return void
      */
-    public function setImages($images)
+    public function setCssDirectory($cssDirectory)
     {
-        $this->images = $image;
+        $this->cssDirectory = $cssDirectory;
     }
+
+    /**
+     * @return void
+     */
+    public function getImagesDirectory()
+    {
+        return $this->imagesDirectory;
+    }
+
+    /**
+     * @param string $imagesDirectory
+     * @return void
+     */
+    public function setImages($imagesDirectory)
+    {
+        $this->imagesDirectory = $imageDirectory;
+    }
+
+
+    /**
+     * @return void
+     */
+    public function getDefaultSassFile()
+    {
+        return $this->defaultSassFile;
+    }
+
+    /**
+     * @param string $defaultSassFile
+     * @return void
+     */
+    public function setDefaultSassFile($defaultSassFile)
+    {
+        $this->defaultSassFile = $defaultSassFile;
+    }
+
+
+    /**
+     * @return void
+     */
+    public function getDefaultcssFile()
+    {
+        return $this->defaultCssFile;
+    }
+
+    /**
+     * @param string $defaultCssFile
+     * @return void
+     */
+    public function setDefaultCssFile($defaultCssFile)
+    {
+        $this->defaultCssFile = $defaultCssFile;
+    }
+
 }
