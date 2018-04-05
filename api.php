@@ -1,7 +1,7 @@
 <?php
 error_reporting( E_ALL );
 $query = isset($_GET['q'])? $_GET['q']:'';
-$query = isset($_POST['q'])? $_POST['q']:'';
+//$query = isset($_POST['q'])? $_POST['q']:'';
 require "vendor/autoload.php";
 
 use purencool_editor\Backend\Lib\Config;
@@ -18,18 +18,19 @@ $app = $collectionObj->collection;
 
 
 
-new ApplicationCompilerController($app);
-
-
-
 switch ($query) {
+
+    case 'compile':   
+        $aCCObj = new ApplicationCompilerController($app);
+        print $aCCObj->getResponse();
+        break;  
     case 'read-dir':
         break;
     case 'read-image-dir':
         break;   
         
-        
-        
+       
+
     case 'read-sass-dir':
         break;
     case 'read-sass-file':

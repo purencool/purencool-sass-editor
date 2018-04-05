@@ -3,7 +3,7 @@
  */
 const Config = {
    liveUrl: 'http://localhost:8080/#/articles',
-   directory: ''
+   compile: 'http://localhost:8000/api.php?q=compile'
   };
   
   /**

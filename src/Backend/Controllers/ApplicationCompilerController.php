@@ -14,6 +14,11 @@ class ApplicationCompilerController
 {
     public function __construct($app)
     {
-        new SassCompiler($app);
+       $this->response($app);
+    }
+
+    public function response($app){
+        $obj = new SassCompiler($app);
+        return $obj->getResponse();
     }
 }

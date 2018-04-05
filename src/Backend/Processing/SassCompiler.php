@@ -5,10 +5,7 @@
 
 namespace purencool_editor\Backend\Processing;
 
-
-
 use \Leafo\ScssPhp\Compiler;
-
 
 /**
  * Undocumented class
@@ -16,6 +13,12 @@ use \Leafo\ScssPhp\Compiler;
 class SassCompiler
 {
 
+    /**
+     * Undocumented variable
+     *
+     * @var string
+     */
+    protected $response;
     
     /**
      * Undocumented function
@@ -33,8 +36,8 @@ class SassCompiler
     protected function getSassCompiler($app)
     {
         $app['message']->setMessage('Compile Sass Directories');
-        $sassDir =  $app['config']->getSassDirectory(); 
-        $cssDir =  $app['config']->getCssDirectory(); 
+        $sassDir =  $app['config']->getSassDirectory();
+        $cssDir =  $app['config']->getCssDirectory();
         $defaultScssFile = "@import '". $app['config']->getDefaultSassFile()."'";
         $defaultCssFile = $app['config']->getDefaultCssFile();
 
@@ -43,7 +46,15 @@ class SassCompiler
         $scss->setFormatter('Leafo\ScssPhp\Formatter\Compressed');
         $outPut = $scss->compile($defaultScssFile);
         $app['message']->setMessage("<pre>$outPut</pre>");
-        file_put_contents($cssDir.'/'.$defaultCssFile, $outPut);
-       
+        $this->response = file_put_contents($cssDir.'/'.$defaultCssFile, $outPut);
+    }
+
+    public function getResponse()
+    {
+        if ($this->response == 1) {
+            return 'Did compile';
+        }
+
+        return 'Didn\'t compile';
     }
 }

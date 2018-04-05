@@ -16,6 +16,6 @@ $collectionObj->setObject('message', new Message);
 
 
 $app = $collectionObj->collection;
-new ApplicationCompilerController($app);
+//new ApplicationCompilerController($app); //--Tested
 
 print $app['message']->getMessages();
