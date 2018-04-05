@@ -1,5 +1,6 @@
 <?php
 error_reporting( E_ALL );
+define("ROOT_DIRECTORY", __DIR__);
 $query = isset($_GET['q'])? $_GET['q']:'';
 //$query = isset($_POST['q'])? $_POST['q']:'';
 require "vendor/autoload.php";
@@ -9,6 +10,7 @@ use purencool_editor\Backend\Lib\Message;
 use purencool_editor\Backend\ObjectCollection;
 
 use purencool_editor\Backend\Controllers\ApplicationCompilerController;
+use purencool_editor\Backend\Controllers\FileFinderController;
 
 
 $collectionObj = new ObjectCollection();
@@ -32,6 +34,8 @@ switch ($query) {
        
 
     case 'read-sass-dir':
+        $objRSD = new  FileFinderController($app); 
+        print $objRSD->response();
         break;
     case 'read-sass-file':
         break; 

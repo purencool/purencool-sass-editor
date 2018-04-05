@@ -51,7 +51,7 @@ class SassCompiler
 
     public function getResponse()
     {
-        if ($this->response == 1) {
+        if ($this->response >= 1) {
             return 'Did compile';
         }
 

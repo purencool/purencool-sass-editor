@@ -28,14 +28,14 @@ class Config
      *
      * @var string
      */
-    private $sassDirectory = __DIR__ .'/../../sass';
+    private $sassDirectory =  ROOT_DIRECTORY .'/src/sass';
 
     /**
      * Default css directory
      *
      * @var string
      */
-    private $cssDirectory = __DIR__ .'/../../css';
+    private $cssDirectory = ROOT_DIRECTORY .'/src/css';
 
     /**
      * Default image directory
