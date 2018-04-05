@@ -13,6 +13,8 @@ namespace purencool_editor\Backend\Lib;
 class Config
 {
 
+    
+    
     /**
      * Default directory if null the app will look
      * at the other directories.
@@ -26,14 +28,14 @@ class Config
      *
      * @var string
      */
-    private $sassDirectory = '../sass';
+    private $sassDirectory = __DIR__ .'/../../sass';
 
     /**
      * Default css directory
      *
      * @var string
      */
-    private $cssDirectory = '../css';
+    private $cssDirectory = __DIR__ .'/../../css';
 
     /**
      * Default image directory
@@ -150,7 +152,7 @@ class Config
     /**
      * @return void
      */
-    public function getDefaultcssFile()
+    public function getDefaultCssFile()
     {
         return $this->defaultCssFile;
     }

@@ -33,10 +33,17 @@ class SassCompiler
     protected function getSassCompiler($app)
     {
         $app['message']->setMessage('Compile Sass Directories');
-        $scss = new Compiler();
-       // $scss->setImportPaths("../../sass/");
-      //  $scss->setFormatter('Leafo\ScssPhp\Formatter\Compressed');
-      //  $output = $scss->compile("@import 'styles.scss'");
-      //  file_put_contents("../../css/style.css", $output);
+        $sassDir =  $app['config']->getSassDirectory(); 
+        $cssDir =  $app['config']->getCssDirectory(); 
+        $defaultScssFile = "@import '". $app['config']->getDefaultSassFile()."'";
+        $defaultCssFile = $app['config']->getDefaultCssFile();
+
+        $scss = new Compiler($dir);
+        $scss->setImportPaths($sassDir);
+        $scss->setFormatter('Leafo\ScssPhp\Formatter\Compressed');
+        $outPut = $scss->compile($defaultScssFile);
+        $app['message']->setMessage("<pre>$outPut</pre>");
+        file_put_contents($cssDir.'/'.$defaultCssFile, $outPut);
+       
     }
 }
