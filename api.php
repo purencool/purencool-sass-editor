@@ -1,6 +1,8 @@
 <?php
+header('Access-Control-Allow-Origin: *');
 error_reporting( E_ALL );
 define("ROOT_DIRECTORY", __DIR__);
+
 $query = isset($_GET['q'])? $_GET['q']:'';
 //$query = isset($_POST['q'])? $_POST['q']:'';
 require "vendor/autoload.php";

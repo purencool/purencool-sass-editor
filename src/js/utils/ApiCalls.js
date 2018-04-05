@@ -1,5 +1,7 @@
+import Config from "../config/Config";
 
 var axios = require('axios');
+
 
 /**
  * 
@@ -45,14 +47,15 @@ var ApiCalls = {
         console.log(error);
       })
   },
-  pageData: function(id){
-    return axios.all([getPages(id)])
+  readSassDirData: function(id){
+
+    return axios.all([axios.get(Config.readSassDir)])
       .then(function(arr){
-        console.log(arr);
+        //console.log(arr);
         return arr;
       })
       .catch(function (error) {
-        console.log(error);
+       // console.log(error);
       })
   },
   videoData: function(id){
