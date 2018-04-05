@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "794f207d86ba920d5d91c9ed3196d607",
+    "content-hash": "8f6948d3156e1d351b6e7477d6d24402",
     "packages": [
         {
             "name": "leafo/scssphp",

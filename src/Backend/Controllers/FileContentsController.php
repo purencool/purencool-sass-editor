@@ -1,7 +1,6 @@
 <?php
 namespace purencool_editor\Backend\Controllers;
 
-include_once '../classes.php';
 
 
 /**

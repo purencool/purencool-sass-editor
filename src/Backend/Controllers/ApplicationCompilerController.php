@@ -4,12 +4,11 @@ namespace purencool_editor\Backend\Controllers;
 /**
  * App sass compiler
  */
-include_once '../classes.php';
 
 
 
-use Leafo\ScssPhp\Compiler;
-use purencool_editor\Backend\Lib\Config;
+use \Leafo\ScssPhp\Compiler;
+
 
 /**
  * Undocumented class
@@ -21,9 +20,9 @@ class ApplicationCompilerController
     /**
      * Undocumented function
      */
-    public function __construct($configObj)
+    public function __construct($app)
     {
-        $this->getACController($configObj);
+        $this->getACController($app);
     }
 
     /**
@@ -31,17 +30,15 @@ class ApplicationCompilerController
      *
      * @return void
      */
-    public function getACController($configObj)
+    public function getACController($app)
     {
-        print_r($configObj); exit;
-        
+    $app['message']->setMessage('Test Leafo Formatter');
         $scss = new Compiler();
-        $scss->setImportPaths("../../sass/");
-        $scss->setFormatter('Leafo\ScssPhp\Formatter\Compressed');
-        $output = $scss->compile("@import 'styles.scss'");
+      //  $scss->setImportPaths("../../sass/");
+      //  $scss->setFormatter('Leafo\ScssPhp\Formatter\Compressed');
+      //  $output = $scss->compile("@import 'styles.scss'");
        // echo $output;
-        file_put_contents("../../css/style.css", $output);
+       // file_put_contents("../../css/style.css", $output);
     }
 }
 
-new ApplicationCompilerController(new Config);

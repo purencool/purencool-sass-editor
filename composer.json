@@ -10,5 +10,11 @@
     ],
     "require": {
         "leafo/scssphp": "0.7.5"
-   }
+   
+    },
+    "autoload": {
+        "psr-4": {
+          "purencool_editor\\":"src/"
+        }
+      }
 }
