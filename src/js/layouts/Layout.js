@@ -14,26 +14,7 @@ export default class Layout extends React.Component {
     }
   }
 
-  /**
-   *  Received request from server add it to
-   *  react component so that it can be rendered
-   *  @todo need to add title from server
-   */
-  componentDidMount() {
-    /*
-    ApiCalls.articleData()
-      .then(function(data){
-        const newData = data.map(c => {
-          return  c.attributes.title;
-        })
-        const addElement = newData.map((title, i) => <ContentTiles key={i} title={title}/> );
-        const newState = Object.assign({}, this.state, {
-           newData: addElement
-        });
-        this.setState(newState);
-      }.bind(this));
-      */
-  }
+
 
   /**
    *  Render request

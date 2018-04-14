@@ -4,6 +4,7 @@ import React from "react";
 
 //import ContentTiles from "../components/widgets/FileListing";
 import ApiCalls from "../../utils/ApiCalls";
+import FileListing from '../widgets/FileListing';
 
 /**
  *  Export component so it can be globally placed 
@@ -13,7 +14,7 @@ export default class Project extends React.Component {
   constructor() {
     super();
     this.state = {
-      newData: null
+      newData: []
    }
   }
   
@@ -23,27 +24,23 @@ export default class Project extends React.Component {
    */
   componentDidMount(){
     ApiCalls.readSassDirData()
-      .then(function(data){
-        console.log('this is a test');
-      //  const newData = data.map(c => {
-       //   return  c.attributes.title;
-      //  })
-         console.log(data);
-       // const addElement = newData.map((title, i) => <ContentTiles key={i} title={title}/> );
-      //  const newState = Object.assign({}, this.state, {
-       //    newData: addElement
-      //  });
-      //  this.setState(newState);
+      .then(function(serverData){
+        this.setState({newData: serverData[0].data })
+        //console.log(serverData[0].data);
       }.bind(this));
   }
+  
   
   /**
    *  Render request
    */
   render() {
+    const listOfObjects = this.state.newData;
     return (
       <aside id="project">
-    </aside>
+         <h2>Files</h2>
+         <FileListing listOfObjects={listOfObjects} />,
+       </aside>
     );
   }
 }
