@@ -6,4 +6,5 @@
 /.composer.phar
 /.sass
 .sass-cache
-.vscode
+/.vscode/
+/.phpcomplete_extended/
