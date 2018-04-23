@@ -6,12 +6,16 @@ import React from "react";
  */
 export default class FileListing extends React.Component {
 
+  changeValue = (data) => (e) => {
+    alert(data); //10
+  }
+
   render() {
-    const  data = this.props.listOfObjects;
+    const data = this.props.listOfObjects;
     const dataArrayList = data.map(dataObj => {
       return (
-        <li key={dataObj.id} >
-          <a href={'#'+dataObj.default_path}>{dataObj.file_name}</a>
+        <li key={dataObj.id}>
+          <span onClick={this.changeValue(dataObj.default_path)}>{dataObj.file_name}</span>
         </li>
       );
 

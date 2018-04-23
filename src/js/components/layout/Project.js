@@ -35,8 +35,6 @@ export default class Project extends React.Component {
    */
   render() {
     const listOfObjects = this.state.newData;
-    console.log('yep');
-   
     return (
       <aside id="project">
          <h2>Files</h2>
