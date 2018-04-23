@@ -58,17 +58,18 @@ class FileFinder
         }
 
         $return =[];
-       
+       $x = 0;
         foreach (Finder::findFiles('*.scss')->from($directory) as $key => $file) {
            $exploded = explode('/',$file);
            $filename = end($exploded);
            array_pop($exploded);
            $return[] = [
+             'id' =>  $x,
              'default_path' => $key,
              'file_name' => $filename,
              'full_path' => implode('/', $exploded)
            ];
-
+           $x++;
         }
 
 

@@ -26,7 +26,6 @@ export default class Project extends React.Component {
     ApiCalls.readSassDirData()
       .then(function(serverData){
         this.setState({newData: serverData[0].data })
-        //console.log(serverData[0].data);
       }.bind(this));
   }
   
@@ -36,6 +35,8 @@ export default class Project extends React.Component {
    */
   render() {
     const listOfObjects = this.state.newData;
+    console.log('yep');
+   
     return (
       <aside id="project">
          <h2>Files</h2>

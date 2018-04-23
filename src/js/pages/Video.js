@@ -23,7 +23,6 @@ export default class Video extends React.Component {
           return  c.attributes.field_video;
         
         })
-        console.log(data);
         const addElement = newData.map((video, i) => <ContentVideo key={i} video={video}/> );
         const newState = Object.assign({}, this.state, {
            newData: addElement
