@@ -187,7 +187,7 @@ class Config
     /**
      * @return void
      */
-    public function getUnCompressedCssFile()
+    public function  getUnCompressedCssFile()
     {
         return $this->unCompressedCssFile;
     }

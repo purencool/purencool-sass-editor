@@ -50,9 +50,9 @@ class FileFinder
         if($this->directory === null){
             $directory =  $this->app['config']->getSassDirectory();
         } elseif($this->directory === 'css'){
-            $directory =  $app['config']->getCssDirectory();
+            $directory =  $this->app['config']->getCssDirectory();
         }elseif($this->directory === 'image'){
-            $directory =  $app['config']->getCssDirectory();
+            $directory =  $this->app['config']->getCssDirectory();
         } else{
             $directory =  $this->app['config']->getSassDirectory();
         }

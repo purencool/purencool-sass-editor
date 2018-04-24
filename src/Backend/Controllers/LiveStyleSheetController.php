@@ -5,7 +5,7 @@ namespace purencool_editor\Backend\Controllers;
 /**
  * App sass compiler
  */
-use purencool_editor\Backend\Processing\LiveStyleSheet;
+use purencool_editor\Backend\Processing\LiveStyleSheet\LiveStyleSheetView;
 
 /**
  * Undocumented class
@@ -37,7 +37,7 @@ class LiveStyleSheetController
      */
     public function response()
     {
-        $obj = new LiveStyleSheet($this->app);
+        $obj = new LiveStyleSheetView($this->app);
         return $obj->getResponse();
     }
 }

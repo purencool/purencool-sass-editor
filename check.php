@@ -18,9 +18,9 @@ $collectionObj->setObject('message', new Message);
 
 
 $app = $collectionObj->collection;
-$obj = new ApplicationCompilerController($app); //--Tested
+//$obj = new ApplicationCompilerController($app); //--Tested
 //$obj = new  FileFinderController($app);  //--Tested
-//$obj = new LiveStyleSheetController($app); //-- Untested
+$obj = new LiveStyleSheetController($app); //-- Untested
 
 
 $app['message']->setMessage($obj->response());
