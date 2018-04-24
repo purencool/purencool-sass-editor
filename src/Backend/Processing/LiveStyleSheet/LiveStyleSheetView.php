@@ -5,8 +5,9 @@
 
 namespace purencool_editor\Backend\Processing\LiveStyleSheet;
 
-use FileFetcher\FileFetchingException;
-use FileFetcher\SimpleFileFetcher;
+
+
+use purencool_editor\Backend\Processing\LiveStyleSheet\RegexString; 
 
 /**
  * Undocumented class
@@ -37,27 +38,12 @@ class LiveStyleSheetView
     public function __construct($app, $directory = null)
     {
         $this->app = $app;
-        $this->directory = $directory;
     }
 
-    /**
-     * Undocumented function
-     *
-     * @return void
-     */
-    protected function fileFinder($fileType)
+ 
+    public function getResponse()
     {
-
-       
-        $directory = $this->app['config']->getCssDirectory();
-        $fileName = $this->app['config']->getUnCompressedCssFile();
-        $fetcher = new SimpleFileFetcher();
-        return 	$fetcher->fetchFile($directory.'/'.$fileName);
-    }
-
-    public function getResponse($fileType = null)
-    {
-      
-        return  $this->fileFinder($fileType);
+       $obj = new RegexString($this->app);
+        return  $obj->getResponse();
     }
 }
