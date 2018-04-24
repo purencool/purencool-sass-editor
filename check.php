@@ -8,6 +8,7 @@ use purencool_editor\Backend\ObjectCollection;
 
 use purencool_editor\Backend\Controllers\ApplicationCompilerController;
 use purencool_editor\Backend\Controllers\FileFinderController;
+use purencool_editor\Backend\Controllers\LiveStyleSheetController;
 
 
 $collectionObj = new ObjectCollection();
@@ -17,8 +18,9 @@ $collectionObj->setObject('message', new Message);
 
 
 $app = $collectionObj->collection;
-//$obj = new ApplicationCompilerController($app); //--Tested
-$obj = new  FileFinderController($app);  //--Tested
+$obj = new ApplicationCompilerController($app); //--Tested
+//$obj = new  FileFinderController($app);  //--Tested
+//$obj = new LiveStyleSheetController($app); //-- Untested
 
 
 $app['message']->setMessage($obj->response());

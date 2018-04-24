@@ -2,6 +2,7 @@
 /node_modules
 /data
 /composer-setup.php
+/style-sheet.php
 /npm-debug.log
 /.composer.phar
 /.sass

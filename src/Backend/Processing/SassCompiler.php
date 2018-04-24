@@ -25,7 +25,8 @@ class SassCompiler
      */
     public function __construct($app)
     {
-        $this->getSassCompiler($app);
+        $this->unCompressedSassCompiler($app);
+        $this->compressedSassCompiler($app);
     }
 
     /**
@@ -33,9 +34,33 @@ class SassCompiler
      *
      * @return void
      */
-    protected function getSassCompiler($app)
+    protected function unCompressedSassCompiler($app)
     {
-        $app['message']->setMessage('Compile Sass Directories');
+        $app['message']->setMessage('Compile Sass Directories into uncompress file');
+        $sassDir =  $app['config']->getSassDirectory();
+        $cssDir =  $app['config']->getCssDirectory();
+        $defaultScssFile = "@import '". $app['config']->getDefaultSassFile()."'";
+        $defaultCssFile = $app['config']->getUnCompressedCssFile();
+
+        $scss = new Compiler($dir);
+        $scss->setImportPaths($sassDir);
+        $outPut = $scss->compile($defaultScssFile);
+        $app['message']->setMessage("<pre>$outPut</pre>");
+        $this->response = file_put_contents($cssDir.'/'.$defaultCssFile, $outPut);
+    }
+
+
+
+
+
+    /**
+     * Undocumented function
+     *
+     * @return void
+     */
+    protected function compressedSassCompiler($app)
+    {
+        $app['message']->setMessage('Compile Sass Directories in compressed file');
         $sassDir =  $app['config']->getSassDirectory();
         $cssDir =  $app['config']->getCssDirectory();
         $defaultScssFile = "@import '". $app['config']->getDefaultSassFile()."'";

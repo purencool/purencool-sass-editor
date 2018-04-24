@@ -4,7 +4,7 @@ import React from "react";
 
 //import ContentTiles from "../components/widgets/FileListing";
 import ApiCalls from "../../utils/ApiCalls";
-import FileListing from '../widgets/FileListing';
+import FileListing from '../ide/FileListing';
 
 /**
  *  Export component so it can be globally placed 

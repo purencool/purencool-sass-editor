@@ -62,6 +62,14 @@ class Config
 
 
     /**
+     * Default live style directory
+     *
+     * @var string
+     */
+    private $unCompressedCssFile = 'uncompressed_styles.css';
+
+
+    /**
      * @return void
      */
     public function getDirectory()
@@ -164,6 +172,24 @@ class Config
     public function setDefaultCssFile($defaultCssFile)
     {
         $this->defaultCssFile = $defaultCssFile;
+    }
+
+
+    /**
+     * @param string $unCompressedCssFile
+     * @return void
+     */
+    public function setUnCompressedCssFile($unCompressedCssFile)
+    {
+        $this->unCompressedCssFile = $unCompressedCssFile;
+    }
+
+    /**
+     * @return void
+     */
+    public function getUnCompressedCssFile()
+    {
+        return $this->unCompressedCssFile;
     }
 
 }
