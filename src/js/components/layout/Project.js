@@ -11,13 +11,15 @@ import FileListing from '../ide/FileListing';
  *  across the website
  */
 export default class Project extends React.Component {
-  constructor() {
-    super();
+  constructor(props){
+    super(props)
 
     this.state = {
       newData: [],
       returnData: []
    }
+
+  // this.fileDataRequest = this.props.fileDataRequest.bind(this);
   }
 
 
@@ -26,7 +28,8 @@ export default class Project extends React.Component {
    *  react component so that it can be rendered
    */
   fileDataRequest(data){
-    console.log('I am here'+data);
+    console.log('I am here project'+data);
+ 
    // ApiCalls.readSassFile(data)
    // .then(function(serverData){
    //   this.setState({returnData: serverData[0].data })
@@ -51,8 +54,8 @@ export default class Project extends React.Component {
    */
   render() {
 
-    const listROfObjects = this.state.returnData;
-    console.log(listROfObjects);
+    //const listROfObjects = this.state.returnData;
+    //console.log(listROfObjects);
 
     const listOfObjects = this.state.newData;
     return (

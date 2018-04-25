@@ -8,13 +8,24 @@ import LiveStyleGuide  from "../components/layout/LiveStyleGuide";
 import Footer from "../components/layout/Footer";
 
 export default class Layout extends React.Component {
-  constructor() {
-    super();
+  constructor(props){
+    super(props)
     this.state = {
       newData: ''
     }
   }
 
+  /**
+   *  Received request from server add it to 
+   *  react component so that it can be rendered
+   */
+  //fileDataRequest(data){
+   // console.log('I am here in the layout '+data);
+   // ApiCalls.readSassFile(data)
+   // .then(function(serverData){
+   //   this.setState({returnData: serverData[0].data })
+   // }.bind(this));
+  //}
 
 
   /**
@@ -32,7 +43,7 @@ export default class Layout extends React.Component {
           <section id="editor">
             {this.props.children}
           </section>
-          <Project/>
+          <Project />
         </main>
         <LiveStyleGuide/>
         <Footer/>
