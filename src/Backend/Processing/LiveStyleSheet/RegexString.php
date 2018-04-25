@@ -13,6 +13,12 @@ use FileFetcher\SimpleFileFetcher;
  */
 class RegexString
 {
+
+/**
+ * Undocumented variable
+ *
+ * @var [type]
+ */
     protected $app;
     
     /**
@@ -183,6 +189,6 @@ class RegexString
     {
         $this->fileFinder();
         $this->styleChunk();
-       return $this->response;
+        return $this->response;
     }
 }

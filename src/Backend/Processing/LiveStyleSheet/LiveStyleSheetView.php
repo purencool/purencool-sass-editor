@@ -8,6 +8,8 @@ namespace purencool_editor\Backend\Processing\LiveStyleSheet;
 
 
 use purencool_editor\Backend\Processing\LiveStyleSheet\RegexString; 
+use purencool_editor\Backend\Processing\LiveStyleSheet\HtmlRender; 
+use purencool_editor\Backend\Processing\LiveStyleSheet\LoadInlineCSS;
 
 /**
  * Undocumented class
@@ -15,6 +17,11 @@ use purencool_editor\Backend\Processing\LiveStyleSheet\RegexString;
 class LiveStyleSheetView 
 {
 
+    /**
+     * Undocumented variable
+     *
+     * @var [type]
+     */
     protected $app;
     
     /**
@@ -42,7 +49,8 @@ class LiveStyleSheetView
 
  
     protected function getCSS(){
-
+       $obj = new LoadInlineCSS($this->app);
+       return '<style>'.$obj->getResponse().'</style>';
     }
 
     protected function regexString(){
@@ -50,8 +58,11 @@ class LiveStyleSheetView
         return $obj->getResponse();
     }
 
-    protected function buildHtml(){
+    protected function buildHtml($htmlArr){
         
+        $obj = new HtmlRender($this->app, $htmlArr);
+       
+        return $obj->getResponse();
     }
 
     /**
@@ -60,11 +71,15 @@ class LiveStyleSheetView
      * @param string $type
      * @return void
      */
-    public function getResponse($type = 'html1')
+    public function getResponse($type = 'html')
     {
       
        if($type == 'html'){
-           return '';
+          $return = $this->getCSS(); 
+          $return .= $this->buildHtml($this->regexString());
+          print $return; exit;
+          
+           //return '<pre>'.print_r($this->buildHtml($this->regexString(),true)).'</pre>';
        }
         return  '<pre>'.print_r($this->regexString(),true).'</pre>';
     }
