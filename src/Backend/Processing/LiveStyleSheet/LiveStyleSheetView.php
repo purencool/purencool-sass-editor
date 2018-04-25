@@ -77,9 +77,7 @@ class LiveStyleSheetView
        if($type == 'html'){
           $return = $this->getCSS(); 
           $return .= $this->buildHtml($this->regexString());
-          print $return; exit;
-          
-           //return '<pre>'.print_r($this->buildHtml($this->regexString(),true)).'</pre>';
+          return $return; 
        }
         return  '<pre>'.print_r($this->regexString(),true).'</pre>';
     }

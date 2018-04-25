@@ -9,6 +9,7 @@ use purencool_editor\Backend\ObjectCollection;
 use purencool_editor\Backend\Controllers\ApplicationCompilerController;
 use purencool_editor\Backend\Controllers\FileFinderController;
 use purencool_editor\Backend\Controllers\LiveStyleSheetController;
+use purencool_editor\Backend\Controllers\FileContentsController; 
 
 
 $collectionObj = new ObjectCollection();
@@ -20,7 +21,8 @@ $collectionObj->setObject('message', new Message);
 $app = $collectionObj->collection;
 //$obj = new ApplicationCompilerController($app); //--Tested
 //$obj = new  FileFinderController($app);  //--Tested
-$obj = new LiveStyleSheetController($app); //-- Untested
+//$obj = new LiveStyleSheetController($app); //-- Tested
+$obj = new FileContentsController($app,'/home/john/Html/purencool/purencool_editor/src/sass/components/_html.scss'); //-- Untested
 
 
 $app['message']->setMessage($obj->response());

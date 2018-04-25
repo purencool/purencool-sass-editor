@@ -14,9 +14,10 @@ export default class IdeFormElements extends React.Component {
 
 
     return (
-      <p>
-        testing today
-      </p>
+      <fieldset>
+        <textarea id="ide-text-area" name="ide-text-area" />
+       
+      </fieldset>
     )
   }
 

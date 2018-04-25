@@ -4,6 +4,7 @@ error_reporting( E_ALL );
 define("ROOT_DIRECTORY", __DIR__);
 
 $query = isset($_GET['q'])? $_GET['q']:'';
+$request = isset($_GET['r'])? $_GET['r']:'';
 //$query = isset($_POST['q'])? $_POST['q']:'';
 require "vendor/autoload.php";
 
@@ -11,8 +12,10 @@ use purencool_editor\Backend\Lib\Config;
 use purencool_editor\Backend\Lib\Message;
 use purencool_editor\Backend\ObjectCollection;
 
-use purencool_editor\Backend\Controllers\ApplicationCompilerController;
+
 use purencool_editor\Backend\Controllers\FileFinderController;
+use purencool_editor\Backend\Controllers\LiveStyleSheetController;
+use purencool_editor\Backend\Controllers\ApplicationCompilerController;
 
 
 $collectionObj = new ObjectCollection();
@@ -26,13 +29,16 @@ switch ($query) {
 
     case 'compile':   
         $aCCObj = new ApplicationCompilerController($app);
-        print $aCCObj->getResponse();
+        print $aCCObj->response();
         break;  
     case 'read-dir':
         break;
     case 'read-image-dir':
         break;   
-        
+    case 'live-style-guide':
+        $lSSCObj = new LiveStyleSheetController($app);
+        print $lSSCObj->response();
+        break;    
        
 
     case 'read-sass-dir':

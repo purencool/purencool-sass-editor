@@ -47,8 +47,8 @@ var ApiCalls = {
         console.log(error);
       })
   },
-  readSassDirData: function(id){
 
+  readSassDirData: function(id){
     return axios.all([axios.get(Config.readSassDir)])
       .then(function(arr){
         //console.log(arr);
@@ -58,6 +58,18 @@ var ApiCalls = {
        // console.log(error);
       })
   },
+
+  liveStyleGuide: function(id){
+    return axios.all([axios.get(Config.liveStyleGuide)])
+      .then(function(arr){
+        //console.log(arr);
+        return arr;
+      })
+      .catch(function (error) {
+       // console.log(error);
+      })
+  },
+  
   videoData: function(id){
     return axios.all([getVideo(id)])
       .then(function(arr){

@@ -4,6 +4,7 @@ import {Link} from "react-router";
 import Nav from "../components/layout/Nav";
 import Toolbar from "../components/layout/Toolbar";
 import Project from "../components/layout/Project";
+import LiveStyleGuide  from "../components/layout/LiveStyleGuide";
 import Footer from "../components/layout/Footer";
 
 export default class Layout extends React.Component {
@@ -33,6 +34,7 @@ export default class Layout extends React.Component {
           </section>
           <Project/>
         </main>
+        <LiveStyleGuide/>
         <Footer/>
       </div>
     );

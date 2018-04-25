@@ -1,7 +1,9 @@
 <?php
+
+
 namespace purencool_editor\Backend\Controllers;
 
-
+use purencool_editor\Backend\Processing\FileContentsString;
 
 /**
  * Undocumented class
@@ -9,41 +11,47 @@ namespace purencool_editor\Backend\Controllers;
 class FileContentsController 
 {
 
+     /**
+     * Undocumented variable
+     *
+     * @var [type]
+     */
+    protected $app;
+
    /**
-    * Undocumented variable
-    *
-    * @var [type]
-    */
-    protected $fileContents;
+     * Undocumented variable
+     *
+     * @var string
+     */
+    protected $path;
 
     
     /**
      * Undocumented function
      *
-     * @param [type] $fileContents
+     * @param [type] $app
      */
-    public function __construct($fileContents)
+    public function __construct($app, $path = '')
     {
-        $this->fileContents = $fileContents;
-    
-   }
+        $this->app = $app;
+        $this->path = $path;
+    }
 
     /**
      * Undocumented function
      *
      * @return void
      */
-    public function getFileContentsController()
+    public function response()
     {
-       return ['contents'=> 'Alalalal
-          hakfakk 
-          lalaksksk 
-          haksk 
-          haksk 
-          hakshaaa'
-       ];
-    }
+      if($this->path == ''){
+          return "No path was submitted";
+      }
+        
+       $obj = new FileContentsString($this->app);
+       
+      return $obj->getResponse($this->path);
+    } 
 }
 
-$obj = new  FileContentsController('');
-print json_encode($obj->getFileContentsController());
+

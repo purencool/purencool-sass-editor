@@ -75,11 +75,12 @@ class RegexString
 
         foreach ($matchesArray as $key => $stringToBeTested) {
             if (strpos($stringToBeTested, "@end")) {
-                $matches[] = "/*". $stringToBeTested;
+                $removeExcessCSS = strstr($stringToBeTested, '@end', true);
+                $matches[] = "/*". $removeExcessCSS . "*/";
             }
         }
 
-
+   
  
         foreach ($matches as $array) {
             $this->styleChunk = $array;
