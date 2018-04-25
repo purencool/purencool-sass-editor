@@ -65,22 +65,20 @@ class RegexString
      */
     protected function styleChunk()
     {
+        $matchesArray = explode('@style', $this->fileContents);
 
-           
-        // preg_match_all('/\[@style\](.*?)\[@end\]/s', $content, $matches);
-        $matches= array(
-           array($this->fileContents),
-           array($this->fileContents),
-           array($this->fileContents)
-       );
+        foreach ($matchesArray as $key => $stringToBeTested) {
+            if (strpos($stringToBeTested, "@end")) {
+                $matches[] = "/*". $stringToBeTested;
+            }
+        }
 
-       
 
+ 
         foreach ($matches as $array) {
-            $this->styleChunk = $array[0];
-            //print_r($this->styleChunk);
-            //print_r($this->linkString()); exit;
+            $this->styleChunk = $array;
 
+            $return['css'] = $this->cssString();
             $return['html'] = $this->htmlString();
             $return['link'] = $this->linkString();
             $return['title'] = $this->titleString();
@@ -91,6 +89,22 @@ class RegexString
         }
     }
 
+
+    /**
+     * Undocumented function
+     *
+     * @return void
+     */
+    protected function cssString()
+    {
+        preg_match_all('/([-0-9a-zA-Z,.:\[\]()\s#>]+\{[^}]+\})/', $this->styleChunk, $matches);
+
+        return $matches;
+    }
+
+
+
+
     /**
      * Undocumented function
      *
@@ -100,7 +114,6 @@ class RegexString
     {
         preg_match_all('/@html "(.*?)"/', $this->styleChunk, $matches);
 
- 
         return $matches;
     }
 
@@ -146,6 +159,11 @@ class RegexString
         return $matches;
     }
 
+    /**
+     * Undocumented function
+     *
+     * @return void
+     */
     protected function fileFinder()
     {
         $directory = $this->app['config']->getCssDirectory();
@@ -155,11 +173,16 @@ class RegexString
         $this->fileContents = $fetcher->fetchFile($directory.'/'.$fileName);
     }
 
+
+    /**
+     * Undocumented function
+     *
+     * @return string
+     */
     public function getResponse()
     {
         $this->fileFinder();
         $this->styleChunk();
-        print "<pre>";
-        print_r($this->response);
+       return $this->response;
     }
 }

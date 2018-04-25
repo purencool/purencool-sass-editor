@@ -12,27 +12,33 @@
  *  @style 
  *  @title "first button"
  *  @link "first button"
- *  @html <button class="button">First button</button>
+ *  @html "<button class='button'>First button</button>"
  *  @description "this is a description about the button"
  */
-button{
-    background:blue !important;  
+ button {
+    background: blue !important; 
 }
-/* @end */
-
-
-/**
- *  @style
- *  @title "My span"
- *  @link "Span"
- *  @html <span >Span color</span>
- *  @description "this is a description a span color"
- */
- span{
-    background:blue !important;
+  /* @end */
+  /**
+   *  @style ""
+   *  @title "My span"
+   *  @link "Span"
+   *  @html "<span class='my-span' >Span color</span>"
+   *  @description "this is a description a span color"
+   */
+  span {
+    background: blue !important;
     display: block;
     height: 20px;
-    width:20px;
-}
+    width: 20px;
+      span{
+        background: pink !important;
+        display: block;
+        height: 20px;
+        width: 20px;
+      }
 
-/* @end */
+ }
+
+
+  /* @end */

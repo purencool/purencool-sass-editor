@@ -41,9 +41,31 @@ class LiveStyleSheetView
     }
 
  
-    public function getResponse()
+    protected function getCSS(){
+
+    }
+
+    protected function regexString(){
+        $obj = new RegexString($this->app);
+        return $obj->getResponse();
+    }
+
+    protected function buildHtml(){
+        
+    }
+
+    /**
+     * Undocumented function
+     *
+     * @param string $type
+     * @return void
+     */
+    public function getResponse($type = 'html1')
     {
-       $obj = new RegexString($this->app);
-        return  $obj->getResponse();
+      
+       if($type == 'html'){
+           return '';
+       }
+        return  '<pre>'.print_r($this->regexString(),true).'</pre>';
     }
 }
