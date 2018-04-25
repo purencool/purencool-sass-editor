@@ -14,6 +14,7 @@ use purencool_editor\Backend\ObjectCollection;
 
 
 use purencool_editor\Backend\Controllers\FileFinderController;
+use purencool_editor\Backend\Controllers\FileContentsController; 
 use purencool_editor\Backend\Controllers\LiveStyleSheetController;
 use purencool_editor\Backend\Controllers\ApplicationCompilerController;
 
@@ -46,6 +47,9 @@ switch ($query) {
         print $objRSD->response();
         break;
     case 'read-sass-file':
+    // /home/john/Html/purencool/purencool_editor/src/sass/components/_html.scss
+        $fCCObj = new FileContentsController($app,$request); 
+        print $fCCObj->response();
         break; 
     case 'create-sass-file':
         break; 

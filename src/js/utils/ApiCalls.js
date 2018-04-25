@@ -69,7 +69,18 @@ var ApiCalls = {
        // console.log(error);
       })
   },
-  
+
+  readSassFile: function(id){
+    return axios.all([axios.get(Config.readSassFile+id)])
+      .then(function(arr){
+        //console.log(arr);
+        return arr;
+      })
+      .catch(function (error) {
+       // console.log(error);
+      })
+  },
+
   videoData: function(id){
     return axios.all([getVideo(id)])
       .then(function(arr){

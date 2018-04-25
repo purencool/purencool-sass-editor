@@ -22,7 +22,7 @@ $app = $collectionObj->collection;
 //$obj = new ApplicationCompilerController($app); //--Tested
 //$obj = new  FileFinderController($app);  //--Tested
 //$obj = new LiveStyleSheetController($app); //-- Tested
-$obj = new FileContentsController($app,'/home/john/Html/purencool/purencool_editor/src/sass/components/_html.scss'); //-- Untested
+$obj = new FileContentsController($app,'/home/john/Html/purencool/purencool_editor/src/sass/components/_html.scss'); //-- Tested
 
 
 $app['message']->setMessage($obj->response());

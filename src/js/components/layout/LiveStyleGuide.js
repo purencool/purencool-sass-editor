@@ -35,7 +35,6 @@ export default class LiveStyleGuide extends React.Component {
    */
   render() {
     const listOfObjects = this.state.newData;
-    console.log(listOfObjects);
     return (
       <aside id="live-style-guide">
       <div dangerouslySetInnerHTML={{__html: listOfObjects }} />

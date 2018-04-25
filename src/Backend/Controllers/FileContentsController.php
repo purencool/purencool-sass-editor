@@ -8,7 +8,7 @@ use purencool_editor\Backend\Processing\FileContentsString;
 /**
  * Undocumented class
  */
-class FileContentsController 
+class FileContentsController
 {
 
      /**
@@ -18,11 +18,11 @@ class FileContentsController
      */
     protected $app;
 
-   /**
-     * Undocumented variable
-     *
-     * @var string
-     */
+    /**
+      * Undocumented variable
+      *
+      * @var string
+      */
     protected $path;
 
     
@@ -44,14 +44,12 @@ class FileContentsController
      */
     public function response()
     {
-      if($this->path == ''){
-          return "No path was submitted";
-      }
+        if ($this->path == '') {
+            return "No path was submitted";
+        }
         
-       $obj = new FileContentsString($this->app);
+        $obj = new FileContentsString($this->app);
        
-      return $obj->getResponse($this->path);
-    } 
+        return $obj->getResponse($this->path);
+    }
 }
-
-

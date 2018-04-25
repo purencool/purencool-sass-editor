@@ -7,13 +7,11 @@ import ApiCalls from "../../utils/ApiCalls";
  *  widgets of information
  */
 export default class FileListing extends React.Component {
-
+ 
   changeValue = (data) => (e) => {
-    alert(data); //10
-
-
-
+    this.props.fileDataRequest(data);
   }
+
 
   render() {
     const data = this.props.listOfObjects;

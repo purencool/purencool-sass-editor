@@ -13,10 +13,26 @@ import FileListing from '../ide/FileListing';
 export default class Project extends React.Component {
   constructor() {
     super();
+
     this.state = {
-      newData: []
+      newData: [],
+      returnData: []
    }
   }
+
+
+  /**
+   *  Received request from server add it to 
+   *  react component so that it can be rendered
+   */
+  fileDataRequest(data){
+    console.log('I am here'+data);
+   // ApiCalls.readSassFile(data)
+   // .then(function(serverData){
+   //   this.setState({returnData: serverData[0].data })
+   // }.bind(this));
+  }
+
   
   /**
    *  Received request from server add it to 
@@ -34,11 +50,15 @@ export default class Project extends React.Component {
    *  Render request
    */
   render() {
+
+    const listROfObjects = this.state.returnData;
+    console.log(listROfObjects);
+
     const listOfObjects = this.state.newData;
     return (
       <aside id="project">
          <h2>Files</h2>
-         <FileListing listOfObjects={listOfObjects} />,
+         <FileListing listOfObjects={listOfObjects} fileDataRequest={this.fileDataRequest} />,
        </aside>
     );
   }
