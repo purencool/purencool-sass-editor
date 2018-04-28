@@ -17,7 +17,8 @@ export default class Layout extends React.Component {
     this.layoutFileDataRequest = this.layoutFileDataRequest.bind(this);
     this.state = {
       newData: '',
-      returnData: []
+      returnData: 'test',
+      
     }
   }
 
@@ -29,23 +30,37 @@ export default class Layout extends React.Component {
     this.setState({ returnData:data })
   }
 
+  componentDidMount() {
+    this.renderChildren();
+  }
+    
+
+  renderChildren() {
+    return React.Children.map(this.props.children, child => {
+      console.log(this.state.returnData); 
+        return React.cloneElement(child, {
+          data: this.state.returnData
+        })
+    });
+  } 
 
   /**
    *  Render request
+   * 
+   * 
    */
   render() {
     const { location } = this.props;
     const title = this.state.newData;
-
-    console.log(this.state.returnData);
+    const returnData = this.state.returnData;
     return (
       <div id="app-container" class={title}>
         <Nav location={location} />
         <main id="main">
           <h1>{title}</h1>
           <Toolbar />
-          <section id="editor">
-            {this.props.children}
+          <section id="editor"  >
+              {this.renderChildren()}
           </section>
           <Project layoutFileDataRequest={this.layoutFileDataRequest} />
         </main>

@@ -6,7 +6,7 @@ import ApiCalls from "../utils/ApiCalls";
 export default class Home extends React.Component {
   constructor(props) {
     super(props)
-
+    console.log(props);
     this.homeFileDataRequest = this.homeFileDataRequest.bind(this);
     this.state = {
       newData: '',

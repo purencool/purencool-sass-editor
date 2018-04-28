@@ -71,6 +71,9 @@ class RegexString
      */
     protected function styleChunk()
     {
+        //@todo needs to be tested
+        //preg_match_all("/\/\*\*\s*\*\s*\@style\s*\*\/(.*?)\/\*\s*\@end\s*\*\//s", $input, $matches3, PREG_PATTERN_ORDER);
+   // print_r($matches3[0]);
         $matchesArray = explode('@style', $this->fileContents);
 
         foreach ($matchesArray as $key => $stringToBeTested) {
