@@ -11,15 +11,15 @@ import FileListing from '../ide/FileListing';
  *  across the website
  */
 export default class Project extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props)
+
+    this.projectFileDataRequest = this.projectFileDataRequest.bind(this);
 
     this.state = {
       newData: [],
-      returnData: []
-   }
+    }
 
-  // this.fileDataRequest = this.props.fileDataRequest.bind(this);
   }
 
 
@@ -27,41 +27,32 @@ export default class Project extends React.Component {
    *  Received request from server add it to 
    *  react component so that it can be rendered
    */
-  fileDataRequest(data){
-    console.log('I am here project'+data);
- 
-   // ApiCalls.readSassFile(data)
-   // .then(function(serverData){
-   //   this.setState({returnData: serverData[0].data })
-   // }.bind(this));
+  projectFileDataRequest(data) {
+    this.props.layoutFileDataRequest(data);
   }
 
-  
+
   /**
    *  Received request from server add it to 
    *  react component so that it can be rendered
    */
-  componentDidMount(){
+  componentDidMount() {
     ApiCalls.readSassDirData()
-      .then(function(serverData){
-        this.setState({newData: serverData[0].data })
+      .then(function (serverData) {
+        this.setState({ newData: serverData[0].data })
       }.bind(this));
   }
-  
-  
+
+
   /**
    *  Render request
    */
   render() {
-
-    //const listROfObjects = this.state.returnData;
-    //console.log(listROfObjects);
-
     const listOfObjects = this.state.newData;
     return (
       <aside id="project">
-         <h2>Files</h2>
-         <FileListing listOfObjects={listOfObjects} fileDataRequest={this.fileDataRequest} />,
+        <h2>Files</h2>
+        <FileListing listOfObjects={listOfObjects} projectFileDataRequest={this.projectFileDataRequest} />,
        </aside>
     );
   }

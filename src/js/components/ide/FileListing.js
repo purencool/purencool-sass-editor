@@ -1,7 +1,7 @@
 import React from "react";
 
 
-import ApiCalls from "../../utils/ApiCalls";
+
 /**
  *  This component is a template to display
  *  widgets of information
@@ -9,7 +9,7 @@ import ApiCalls from "../../utils/ApiCalls";
 export default class FileListing extends React.Component {
  
   changeValue = (data) => (e) => {
-    this.props.fileDataRequest(data);
+    this.props.projectFileDataRequest(data);
   }
 
 
