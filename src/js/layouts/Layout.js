@@ -10,6 +10,8 @@ import Footer from "../components/layout/Footer";
 
 
 
+import ApiCalls from "../utils/ApiCalls";
+
 export default class Layout extends React.Component {
   constructor(props) {
     super(props)
@@ -27,17 +29,27 @@ export default class Layout extends React.Component {
    *  react component so that it can be rendered
    */
   layoutFileDataRequest(data) {
+
+    console.log(data);
+    document.getElementById("ide-form-path").value = data;
+
     this.setState({ returnData:data })
+    ApiCalls.readSassFile(data)
+    .then(function (serverData) {
+     
+      this.setState({ returnData: serverData[0].data })
+    }.bind(this));
+
+     
   }
 
   componentDidMount() {
-    this.renderChildren();
+    this.renderChildren();  
   }
     
 
   renderChildren() {
     return React.Children.map(this.props.children, child => {
-      console.log(this.state.returnData); 
         return React.cloneElement(child, {
           data: this.state.returnData
         })
