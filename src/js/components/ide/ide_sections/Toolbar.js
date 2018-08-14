@@ -1,5 +1,5 @@
 import React from "react";
-import Config from "../../../reducers/Config";
+import Config from "../../../state/store/Config";
 
 /**
  *  Export component so it can be globally placed

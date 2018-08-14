@@ -1,4 +1,4 @@
-import Config from "../reducers/Config";
+import Config from "../state/store/Config";
 
 var axios = require('axios');
 
