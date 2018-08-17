@@ -16,10 +16,6 @@ export default class Footer extends React.Component {
             <p>Copyright &copy; Purencool</p>
           </div>
         </div>
-        <div>
-          <List />
-          <Form />
-        </div>
       </footer>
     );
   }

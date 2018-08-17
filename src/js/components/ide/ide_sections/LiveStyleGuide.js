@@ -1,8 +1,5 @@
 import React from "react";
 
-
-
-//import ContentTiles from "../components/widgets/FileListing";
 import ApiCalls from "../../../utils/ApiCalls";
 
 
@@ -15,21 +12,22 @@ export default class LiveStyleGuide extends React.Component {
     super();
     this.state = {
       newData: []
-   }
+    }
   }
-  
+
+
   /**
    *  Received request from server add it to 
    *  react component so that it can be rendered
    */
-  componentDidMount(){
+  componentDidMount() {
     ApiCalls.liveStyleGuide()
-      .then(function(serverData){
-        this.setState({newData: serverData[0].data })
+      .then(function (serverData) {
+        this.setState({ newData: serverData[0].data })
       }.bind(this));
   }
-  
-  
+
+
   /**
    *  Render request
    */
@@ -37,9 +35,8 @@ export default class LiveStyleGuide extends React.Component {
     const listOfObjects = this.state.newData;
     return (
       <aside id="live-style-guide">
-      <div dangerouslySetInnerHTML={{__html: listOfObjects }} />
-      
-       </aside>
+        <div dangerouslySetInnerHTML={{ __html: listOfObjects }} />
+      </aside>
     );
   }
 }
