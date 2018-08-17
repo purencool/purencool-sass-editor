@@ -1,12 +1,12 @@
 import React from "react";
-
-
 import Toolbar from "../components/ide/ide_sections/Toolbar";
 import Project from "../components/ide/ide_sections/Project";
 import LiveStyleGuide from "../components/ide/ide_sections/LiveStyleGuide";
 import Footer from "../components/ide/ide_sections/Footer";
 
-
+/**
+ * 
+ */
 export default class Layout extends React.Component {
   constructor(props) {
     super(props)
@@ -16,7 +16,7 @@ export default class Layout extends React.Component {
       newData: '',
       returnData: 'test',
       urlData: '',
-      
+
     }
   }
 
@@ -25,22 +25,28 @@ export default class Layout extends React.Component {
    *  react component so that it can be rendered
    */
   layoutFileDataRequest(data) {
-    this.setState({ returnData: data})
+    this.setState({ returnData: data })
   }
 
+  /**
+   * 
+   */
   componentDidMount() {
-    this.renderChildren();  
+    this.renderChildren();
   }
-    
 
+
+  /**
+   * 
+   */
   renderChildren() {
     console.log(this.state.returnData);
     return React.Children.map(this.props.children, child => {
-        return React.cloneElement(child, {
-          data: this.state.returnData
-        })
+      return React.cloneElement(child, {
+        data: this.state.returnData
+      })
     });
-  } 
+  }
 
   /**
    *  Render request
@@ -55,12 +61,13 @@ export default class Layout extends React.Component {
           <h1>{title}</h1>
           <Toolbar />
           <section id="editor"  >
-              {this.renderChildren()}
+            {this.renderChildren()}
           </section>
           <Project layoutFileDataRequest={this.layoutFileDataRequest} />
         </main>
-        <LiveStyleGuide />
         <Footer />
+        <LiveStyleGuide />
+        
       </div>
     );
   }

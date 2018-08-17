@@ -1,5 +1,5 @@
 import React from "react";
-import Config from "../../../state/store/Config";
+import Config from "../../../state/constants/config";
 
 /**
  *  Export component so it can be globally placed

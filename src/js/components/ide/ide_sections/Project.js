@@ -2,7 +2,7 @@ import React from "react";
 
 
 import ApiCalls from "../../../utils/ApiCalls";
-import FileListing from '../ide_elements/FileListing';
+import FileListing from '../ide_user_interactions/FileListing';
 
 /**
  *  Export component so it can be globally placed 

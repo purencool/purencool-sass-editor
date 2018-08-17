@@ -1,13 +1,13 @@
-import Config from "../state/store/Config";
+import Config from "../state/constants/config";
 
-var axios = require('axios');
+let axios = require('axios');
 
 
 
 /**
  * 
  */
-var ApiCalls = {
+let ApiCalls = {
   articleData: function(id){
     return axios.all([getArticles(id)])
       .then(function(arr){

@@ -1,4 +1,6 @@
 import React from "react";
+import List from "../ide_elements/GeneralList";
+import Form from "../ide_user_interactions/Form";
 
 
 /**
@@ -13,6 +15,10 @@ export default class Footer extends React.Component {
           <div class="col-lg-12">
             <p>Copyright &copy; Purencool</p>
           </div>
+        </div>
+        <div>
+          <List />
+          <Form />
         </div>
       </footer>
     );

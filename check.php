@@ -1,4 +1,5 @@
 <?php
+header('Access-Control-Allow-Origin: *');
 error_reporting( E_ALL );
 define("ROOT_DIRECTORY", __DIR__);
 require "vendor/autoload.php";

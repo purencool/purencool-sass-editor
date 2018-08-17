@@ -25,10 +25,11 @@
     "react-redux": "^4.4.5",
     "redux-thunk": "^2.1.0",
     "webpack": "^1.12.9",
-    "webpack-dev-server": "^1.14.1",
-    "youtube-embed-video": "^1.0.2"
+    "webpack-dev-server": "^1.14.1"
   },
   "devDependencies": {
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "react-redux": "^4.4.9",
     "redux": "^3.7.2",
     "webpack": "^4.0.1",
     "webpack-cli": "^2.0.10",
