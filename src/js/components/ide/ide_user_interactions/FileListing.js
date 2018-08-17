@@ -16,7 +16,6 @@ const mapDispatchToProps = dispatch => {
 class FileListingClass extends React.Component {
   constructor() {
     super();
-    this.changeValue = this.changeValue.bind(this);
   }
 
 
@@ -49,7 +48,6 @@ class FileListingClass extends React.Component {
       </ul>
     )
   }
-
 }
 
 const FileListing = connect(null, mapDispatchToProps)(FileListingClass);

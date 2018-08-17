@@ -7,6 +7,20 @@ const initialState = {
   articles: [],
   passFilePath:[]
 };
+
+/*
+@todo need to move the reduces to this
+import { combineReducers } from 'redux';
+import characters from './characters_reducer';
+import heroes from './heroes_reducer';
+
+const rootReducers = combineReducers({
+    characters,
+    heroes
+});
+
+export default rootReducers;
+*/
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_ARTICLE:

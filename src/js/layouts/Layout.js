@@ -40,7 +40,6 @@ export default class Layout extends React.Component {
    * 
    */
   renderChildren() {
-    console.log(this.state.returnData);
     return React.Children.map(this.props.children, child => {
       return React.cloneElement(child, {
         data: this.state.returnData
